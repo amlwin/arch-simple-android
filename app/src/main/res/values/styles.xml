@@ -13,4 +13,6 @@
         <item name="windowActionBar">false</item>
     </style>
 
+    <style name="AppTheme.Toolbar" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
 </resources>
