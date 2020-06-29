@@ -1,4 +1,4 @@
-package com.amlwin.android.launchpad
+package com.amlwin.android.archsample
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
