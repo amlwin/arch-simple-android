@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.amlwin.android.archsample.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
@@ -24,9 +25,19 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnGo.setOnClickListener {
+        binding.btnAdd.setOnClickListener {
             val actions = ListFragmentDirections.actionListFragmentToDetailFragment()
             binding.root.findNavController().navigate(actions)
+        }
+
+        binding.toolBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.action_setting -> {
+                    findNavController().navigate(ListFragmentDirections.actionListFragmentToSettingFragment())
+                    true
+                }
+                else -> false
+            }
         }
     }
 }
